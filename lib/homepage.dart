@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:owuraku_app/personal_info.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -66,13 +67,13 @@ class _HomePageState extends State<HomePage> {
           CircleAvatar(
             radius: screenWidth * 0.2, 
             child: ClipOval(
-              child: Image.asset('assets/images/profile.jpeg'),
+              child: Image.asset('assets/images/avatar.png'),
             ),
           ),
           SizedBox(height: screenHeight * 0.03),
           const Center(
             child: Text(
-              'Mr. Owuraku',
+              'John Doe',
               style: TextStyle(fontSize: 16),
             ),
           ),
@@ -159,7 +160,12 @@ class _HomePageState extends State<HomePage> {
               horizontal: screenWidth * 0.25, // Adjusting padding for button
             ),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PersonalInformation()),
+            );
+              },
               child: const Text('VIEW'),
             ),
           ),
